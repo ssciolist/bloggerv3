@@ -2,7 +2,7 @@ require "rails_helper"
 
 describe "user edits an article" do
   context "they edit from a show article page" do
-    it "they click an edit button" do
+    it "they click an edit button and fill in new info" do
       article_1 = Article.create!(title: "Denver Post is dying", body: "Because of greed")
       article_2 = Article.create!(title: "Journalism is dying", body: "It's failing to adapt")
 
@@ -16,6 +16,7 @@ describe "user edits an article" do
       click_on ("Update Article")
 
       expect(current_path).to eq(articles_path)
+      expect(page).to have_content("Article 'New Article' updated.")
       expect(page).to have_content("New Article")
     end
   end
