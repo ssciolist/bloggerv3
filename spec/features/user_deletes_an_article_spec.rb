@@ -1,7 +1,7 @@
 require "rails_helper"
 
 describe "user deletes an article" do
-  context "they link from an individual article" do
+  context "they link from a show article page" do
     it "they click a delete button" do
       article_1 = Article.create!(title: "Denver Post is dying", body: "Because of greed")
       article_2 = Article.create!(title: "Journalism is dying", body: "It's failing to adapt")
