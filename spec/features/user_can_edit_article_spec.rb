@@ -13,7 +13,7 @@ describe "user edits an article" do
 
       fill_in("Title", :with => "New Article")
       fill_in("Body", :with => "Here's all the new body content")
-      click_on ("Submit")
+      click_on ("Update Article")
 
       expect(current_path).to eq(articles_path)
       expect(page).to have_content("New Article")
